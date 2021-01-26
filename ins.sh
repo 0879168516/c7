@@ -1,5 +1,5 @@
 #!/bin/bash
-# Created By M Fauzan Romandhoni (+6281311310405) (m.fauzan58@yahoo.com)
+# Created By M Fauzan Romandhoni (+6283875176829) (m.fauzan58@yahoo.com)
 
 clear
 
@@ -20,7 +20,7 @@ if [ $MYIP = "" ]; then
    MYIP=`ifconfig | grep 'inet addr:' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | cut -d: -f2 | awk '{ print $1}' | head -1`;
 fi
 MYIP2="s/xxxxxxxxx/$MYIP/g";
-
+source="https://github.com/0879168516/c7/raw/master
 # go to root
 cd
 
