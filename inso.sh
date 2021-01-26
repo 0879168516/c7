@@ -56,11 +56,13 @@ systemctl stop exim
 systemctl disable exim
 
 # setting repo
-rpm -Uvh http://dl.fedoraproject.org/pub/epel/7/x86_64/Packages/e/epel-release-7-11.noarch.rpm
-rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
-rpm -Uvh https://raw.githubusercontent.com/daybreakersx/premscript/master/rpmforge-release-0.5.3-1.el7.rf.x86_64.rpm
-
-
+wget https://www.dropbox.com/s/0rdm31g4vp3d0u0/RadzCentOS7.rpm
+wget https://www.dropbox.com/s/shbrw9n1o74ocwe/Radz-release-7.rpm
+rpm -Uvh epel-release-latest-7.noarch.rpm
+rpm -Uvh remi-release-7.rpm
+wget https://www.dropbox.com/s/lr93b0azmiy3z7h/rpmforge-release-0.5.3-1.el7.rf.x86_64.rpm
+rpm -Uvh rpmforge-release-0.5.3-1.el7.rf.x86_64.rpm
+sed -i 's/enabled = 1/enabled = 0/g' /etc/yum.repos.d/rpmforge.repo
 sed -i -e "/^\[remi\]/,/^\[.*\]/ s|^\(enabled[ \t]*=[ \t]*0\\)|enabled=1|" /etc/yum.repos.d/remi.repo
 rm -f *.rpm
 
